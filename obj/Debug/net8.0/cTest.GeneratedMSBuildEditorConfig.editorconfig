@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = cTest
+build_property.RootNamespace = cTest
+build_property.ProjectDir = C:\Users\Overlord\Programs\OpenServer\domains\sharpi\cTest\cTest\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Overlord\Programs\OpenServer\domains\sharpi\cTest\cTest
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/FormAddDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEZvcm1BZGREZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/FormAddJober.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEZvcm1BZGRKb2Jlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/FormUpdateDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEZvcm1VcGRhdGVEZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/FormUpdateJober.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEZvcm1VcGRhdGVKb2Jlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/GetDepartments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEdldERlcGFydG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/GetDepartmentsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEdldERlcGFydG1lbnRzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/GetDepartmentsSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEdldERlcGFydG1lbnRzU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/GetListJobers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEdldExpc3RKb2JlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/API/GetPositionsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBJXEdldFBvc2l0aW9uc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/Home/Department.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Overlord/Programs/OpenServer/domains/sharpi/cTest/cTest/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1xl5g5kyij

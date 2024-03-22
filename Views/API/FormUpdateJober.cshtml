@@ -1,0 +1,45 @@
+﻿@model Jobers
+@{
+    Layout = null;
+}
+
+<form name="update">
+    <table class="popup-table">
+        <tbody>
+            <tr>
+                <td>
+                    <input name="id" value="@Model.id" type="hidden">
+                    <p>@Model.id</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="fio" value="@Model.fio" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td class="departments">
+                    <input name="departmentId" value="@Model.departmentId" type="hidden">
+                    <p>@Model.department.name</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="positions">
+                    <input name="positionId" value="@Model.positionId" type="hidden">
+                    <p>@Model.position.name</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="phone" value="@Model.phone" type="text" data-inputmask="'mask' : '8-999-999-99-99'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="photo" type="file">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit">Обновить</button>
+</form>

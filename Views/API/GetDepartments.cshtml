@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Department>
+@{
+    Layout = null;
+}
+@functions {
+    public string ViewDepartments(IEnumerable<Department> model)
+    {
+        <ul>
+            @foreach(var department in model){
+                <li>
+                    <a href="#" onclick="UpdateDepartment(@department.id)">@department.name</a>
+                    <button class="delete-jober" onclick="deleteDepartment(@department.id);">Удалить</button>
+                    @if (department.positions.Count > 0)
+                    {
+                        <ol>
+                            @foreach (var position in department.positions)
+                            {
+                                <li>
+                                    <b>@position.name</b>
+                                    <p>Минимальная ЗП - @position.salaryMin</p>
+                                    <p>Максимальная ЗП - @position.salaryMax</p>
+                                    <p>Кол-во мест - @position.countSeats</p>
+                                </li>
+                            }
+                        </ol>
+                    }
+                    @if (department.departments.Count > 0)
+                    {
+                        @ViewDepartments(department.departments);
+                    }
+                </li>
+            }
+        </ul>
+        return "";
+    }
+}
+
+@ViewDepartments(Model);

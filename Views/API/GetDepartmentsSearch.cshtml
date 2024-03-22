@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Department>
+@{
+    Layout = null;
+}
+
+<ul>
+    @foreach (var department in Model)
+    {
+        <li>
+            <a href="#" onclick="UpdateDepartment(@department.id)">@department.name</a>
+            <button class="delete-jober" onclick="deleteDepartment(@department.id);">Удалить</button>
+            @if (department.positions.Count > 0)
+            {
+                <ol>
+                    @foreach (var position in department.positions)
+                    {
+                        <li>
+                            <b>@position.name</b>
+                            <p>Минимальная ЗП - @position.salaryMin</p>
+                            <p>Максимальная ЗП - @position.salaryMax</p>
+                            <p>Кол-во мест - @position.countSeats</p>
+                        </li>
+                    }
+                </ol>
+            }
+        </li>
+    }
+</ul>

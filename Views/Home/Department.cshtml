@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Department>
+@* @helper не получилось использовать, пишет что "Имя "helper" не существует в текущем контексте. Попробовал установить RazorGenerator, но тоже не помогло"*@
+@functions {
+    public string ViewDepartments(IEnumerable<Department> model)
+    {
+        <ul class="departments-list">
+            @foreach (var department in model)
+            {
+                <li>
+                    <a href="#" onclick="UpdateDepartment(@department.id)">@department.name</a>
+                    <button class="delete-jober" onclick="deleteDepartment(@department.id);">Удалить</button>
+                    @if (department.positions.Count > 0)
+                    {
+                        <ol>
+                            @foreach (var position in department.positions)
+                            {
+                                <li>
+                                    <b>@position.name</b>
+                                    <p>Минимальная ЗП - @position.salaryMin</p>
+                                    <p>Максимальная ЗП - @position.salaryMax</p>
+                                    <p>Кол-во мест - @position.countSeats</p>
+                                </li>
+                            }
+                        </ol>
+                    }
+                    @if (department.departments.Count > 0)
+                    {
+                        @ViewDepartments(department.departments);
+                    }
+                </li>
+            }
+        </ul>
+        return "";
+    }
+}
+
+<div class="header-table">
+    <input type="text" name="searchDepartments" value="" placeholder="Поиск..." />
+    <button class="add-department" onclick="AddDepartment();">Добавить</button>
+</div>
+
+@ViewDepartments(Model);
+
+
+<div class="popup-fade">
+    <div class="popup">
+        <a class="popup-close" href="#">Закрыть</a>
+        <div class="popup-body"></div>
+    </div>
+</div>

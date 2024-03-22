@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Jobers>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="header-table">
+    <input type="text" name="search" value="" placeholder="Поиск..." />
+    <button class="add-jober" onclick="AddJober();">Добавить</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>fio</th>
+            <th>department</th>
+            <th>position</th>
+            <th>phone</th>
+            <th>photo</th>
+            <th>Удалить</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jober in Model)
+        {
+            <tr data-id="@jober.id">
+                <td name="id">@jober.id</td>
+                <td name="fio">@jober.fio</td>
+                <td name="department">@jober.department.name</td>
+                <td name="position">@jober.position.name</td>
+                <td name="phone">@jober.phone</td>
+                @if (jober.photo != null)
+                {
+                    <td name="photo"><img src="@jober.photo" alt="@jober.fio" /></td>
+                }
+                else
+                {
+                    <td name="photo"></td>
+                }
+                <td name="buttonDelete"><button class="delete-jober" onclick="deleteJober(@jober.id);">Удалить</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="showAdd" onclick="ShowAdd();">Показать ещё</button>
+
+<div class="popup-fade">
+    <div class="popup">
+        <a class="popup-close" href="#">Закрыть</a>
+        <div class="popup-body"></div>
+    </div>
+</div>

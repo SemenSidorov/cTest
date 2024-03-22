@@ -1,0 +1,15 @@
+﻿@model List<Positions>
+@{
+    Layout = null;
+}
+
+@if (Model.Count() > 0)
+{
+    <select class="select-position-id" name="positionId">
+        @foreach (var position in Model)
+        {
+            <option value="@position.id">@position.name</option>
+        }
+        <option value="0">Нет</option>
+    </select>
+}
