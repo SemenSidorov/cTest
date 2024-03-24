@@ -20,13 +20,13 @@
             <tr>
                 <td class="departments">
                     <input name="departmentId" value="@Model.departmentId" type="hidden">
-                    <p>@Model.department.name</p>
+                    <p>@Model.department?.name</p>
                 </td>
             </tr>
             <tr>
                 <td class="positions">
                     <input name="positionId" value="@Model.positionId" type="hidden">
-                    <p>@Model.position.name</p>
+                    <p>@Model.position?.name</p>
                 </td>
             </tr>
             <tr>

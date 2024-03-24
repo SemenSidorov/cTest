@@ -16,66 +16,41 @@ namespace cTest.Controllers
             positionsController = new PositionsController(_content);
         }
 
-        public List<Department> GetDepartmentsSearch(string search = "")
+        public IEnumerable<Department> GetDepartmentsSearch(string search = "")
         {
-            List<int>? departmentsId = positionsController.GetDepartmentsByPositionsName(search);
-            var departmentsList = _content.Department.AsNoTracking().Where(el => EF.Functions.Like(el.name, $"%{search}%") || departmentsId.Contains(el.id)).ToList();
-            foreach (var item in departmentsList)
-            {
-                item.positions = (List<Positions>?)positionsController.GetPositions(item.id);
-            }
-            return departmentsList;
+            var departmentsId = positionsController.GetDepartmentsByPositionsName(search);
+            return _content.Department
+                .Include(x => x.positions)
+                .AsNoTracking()
+                .Where(el => EF.Functions.Like(el.name, $"%{search}%") || departmentsId.Contains(el.id));
         }
 
-        public List<Department> GetDepartments(int departmentId = 0)
+        public IEnumerable<Department> GetDepartments(int departmentId = 0)
         {
-            var departmentsList = _content.Department.AsNoTracking().Where(el => el.departmentId == departmentId).ToList();
-            foreach (var item in departmentsList)
-            {
-                item.departments = GetDepartments(item.id);
-                item.positions = (List<Positions>?)positionsController.GetPositions(item.id);
-            }
-            return departmentsList;
+            return _content.Department
+                .Include(x => x.positions)
+                .Include(x => x.departments).ThenInclude(x => x.positions)
+                .AsNoTracking().Where(el => el.departmentId == departmentId);
         }
 
-        public List<Department> GetDepartmentsList(int? departmentId)
+        public IEnumerable<Department> GetDepartmentsList(int? departmentId)
         {
-            return _content.Department.AsNoTracking().Where(el => el.id != departmentId).ToList();
+            return _content.Department.AsNoTracking().Where(el => el.id != departmentId);
         }
 
         public Department GetDepartmentById(int id)
         {
-            try
-            {
-                return _content.Department.AsNoTracking().First(el => el.id == id);
-            }
-            catch (Exception ex)
-            {
-                return new Department();
-            }
+            return _content.Department.AsNoTracking().First(el => el.id == id);
         }
 
-        public List<int>? GetDepartmentByName(string name)
+        public IEnumerable<int>? GetDepartmentByName(string name)
         {
-            List<int> result = new List<int>();
-            try
-            {
-                var listDepart = _content.Department.AsNoTracking().Where(el => EF.Functions.Like(el.name, $"%{name}%"));
-                foreach (var item in listDepart)
-                {
-                    result.Add(item.id);
-                }
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return _content.Department.AsNoTracking().Where(el => EF.Functions.Like(el.name, $"%{name}%")).Select(x => x.id);
         }
 
         public void AddDepartment(Department department)
         {
-            _content.Department.AddRange(department);
+            _content.Department.Add(department);
             _content.SaveChanges();
         }
 

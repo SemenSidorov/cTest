@@ -14,5 +14,14 @@ namespace cTest
         public DbSet<Department> Department { get; set; }
 
         public DbSet<Positions> Positions { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Department>().HasMany(x => x.positions).WithOne();
+            modelBuilder.Entity<Department>().HasMany(x => x.departments).WithOne().HasForeignKey(x => x.departmentId);
+            modelBuilder.Entity<Jobers>().HasOne(x => x.position).WithOne();
+            modelBuilder.Entity<Jobers>().HasOne(x => x.department).WithOne();
+        }
     }
 }

@@ -8,7 +8,7 @@
         public string? phone { get; set; }
         public string? photo { get; set; }
         public int positionId { get; set; }
-        public virtual Department? department { get; set; }
-        public virtual Positions? position { get; set; }
+        public virtual Department department { get; set; }
+        public Positions position { get; set; }
     }
 }

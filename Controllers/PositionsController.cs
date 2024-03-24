@@ -15,7 +15,7 @@ namespace cTest.Controllers
 
         public IEnumerable<Positions> GetPositions(int departmentId)
         {
-            return _content.Positions.AsNoTracking().Where(el => el.departmentId == departmentId).ToList();
+            return _content.Positions.AsNoTracking().Where(el => el.departmentId == departmentId);
         }
 
         public Positions GetPositionById(int id)

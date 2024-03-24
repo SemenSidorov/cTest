@@ -3,17 +3,21 @@
     Layout = null;
 }
 
-<form name="updateDepartment">
-    <table class="popup-table">
-        <tbody>
-            <tr>
-                <td><input name="name" value="@Model.name" type="text" /></td>
-            </tr>
-            <tr>
-                <td class="departments">
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <button type="submit">Обновить</button>
-</form>
+@if (Model != null)
+{
+    <form name="updateDepartment">
+        <input type="hidden" name="id" value="@Model.id" />
+        <table class="popup-table">
+            <tbody>
+                <tr>
+                    <td><input name="name" value="@Model.name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td class="departments">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">Обновить</button>
+    </form>
+}

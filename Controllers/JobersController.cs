@@ -1,6 +1,7 @@
 ﻿using cTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace cTest.Controllers
 {
@@ -19,16 +20,15 @@ namespace cTest.Controllers
             positionsController = new PositionsController(_content);
         }
 
-        public List<Jobers> GetList(int lastId = 1, string search = "")
+        public IEnumerable<Jobers> GetList(int lastId = 1, string search = "")
         {
-            List<int>? departmentsId = departmentsController.GetDepartmentByName(search);
-            var jobersList = _content.Jobers.AsNoTracking().Where(el => el.id > lastId && (EF.Functions.Like(el.fio, $"%{search}%") || EF.Functions.Like(el.phone, $"%{search}%") || departmentsId.Contains(el.departmentId))).Take(3).ToList();
-            foreach (var jober in jobersList)
-            {
-                jober.department = departmentsController.GetDepartmentById(jober.departmentId);
-                jober.position = positionsController.GetPositionById(jober.positionId);
-            }
-            return jobersList;
+            var departmentsId = departmentsController.GetDepartmentByName(search);
+            return _content.Jobers
+                .Include(x => x.position)
+                .Include(x => x.department)
+                .AsNoTracking()
+                .Where(el => el.id > lastId && (EF.Functions.Like(el.fio, $"%{search}%") || EF.Functions.Like(el.phone, $"%{search}%") || departmentsId.Contains(el.departmentId)))
+                .Take(3);
         }
 
         public void AddJober(Jobers jober, IFormFile? photo)
@@ -37,7 +37,7 @@ namespace cTest.Controllers
             {
                 jober.photo = FileController.SaveFile(photo);
             }
-            _content.Jobers.AddRange(jober);
+            _content.Jobers.Add(jober);
             _content.SaveChanges();
         }
 
